@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+<title>SHMEDIA - Home</title> <!-- this code sets the title for the google chrome tab or for any browser that requires that information -->
+<link rel="shortcut icon" href="img\iconhome.ico"> <!-- sets the head favicon -->
+<link href="css/style.css" rel="stylesheet" type="text/css" /> <!-- links HTML to an external CSS stylesheet-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> <!-- imports an external font from google fonts -->
+</head>
+
+
+<style>
+body { background-color: PeachPuff; } /*inline CSS code to change the page background instead of using exertal CSS file, this means each page can have a different colour*/
+</style>
+
+<!-- MENU HTML -->
+<body>
+  <nav>
+    <div class="logo"> <!-- this creates a class for the logo which is displayed in the top left of every page -->
+      <h4>SHMEDIA</h4> <!-- this is the heading which is used for the website logo -->
+    </div>
+    <ul class="nav-links"> <!-- this creates a class for all of the nav links -->
+      <li> <a href="javascript:void(0)">Home</a> </li> <!-- the javascript:void operator acts as a placeholder for the web anchor, this prevents the page from refreshing when the same page link is clicked  -->
+      <li> <a href="cv.html">CV</a> </li> <!-- anchor element linking to the animal crossing page -->
+      <li> <a href="work.html">My Work</a> </li> <!-- anchor element linking to the tropicana page -->
+      <li> <a href="contact.html">Contact</a> </li> <!-- anchor element linking to the contact page -->
+    </ul>
+
+
+    <div class="burgerMenu"> <!-- this creates a class for all the burger menu items to sit inside of -->
+      <div class="line1"> </div> <!-- this creates a class for the first line of the burger menu -->
+      <div class="line2"> </div> <!-- this creates a class for the second line of the burger menu -->
+      <div class="line3"> </div> <!-- this creates a class for the third line of the burger menu -->
+    </div>
+  </nav>
+  <script src="js/script.js"></script> <!-- links HTML to an external javascript file -->
+
+
+
+<!-- HOME PAGE HTML -->
+<div class="homeTitle">
+  <h1> Welcome To SHMEDIA </h1>
+</div>
+
+<!-- PARAGRAPH 1 -->
+<div class="homeParagraph1">
+  <p> This website has been specifically created to provide information about Nintendo's game Animal Crossing: New Horizons.
+  <br> Using the navigation system you may explore a variety of pages containing information on various subjects relating to the game.
+  <br>
+  <br> Check out the trailer for Animal Crossing: New Horizons below.</p>
+</div>
+
+
+<!-- The video element was created to have two file formats instead of just one to maximise the compatability of the video Playing
+  within as many browsers as possible. A poster has also been added to further add a more professional looking design and feel to the page.
+  A video fallback was written in underneath the sources to provide an additional option for browsers if they happen to not support both formats given.
+ -->
+<!-- ANIMAL CROSSING GAME TRAILER -->
+<div class="acnhtrailer">
+  <video controls poster="img/trailerposter.jpg">
+    <source src="vid\acnhtrailer.mp4" type="video/mp4"/>
+    <source src="vid\acnhtrailer.webm" type="video/webm"/>
+    <p> Unfortunately, this video is not compatible with your browser. If you still want to watch it, please click <a href="vid/acnhtrailer.mp4">here</a> to download it.</p>
+  </video>
+</div>
+
+
+<div class="homeParagraph2">
+  <p> If you want to find out more about Animal Crossing: New Horizons, then visit the Animal Crossing page by clicking at the top of the page on PC or on the pop-out menu bar on mobile.
+  <br>
+  <br> <!-- Breaks were used here to allow spacing within each line of the paragraph where necessary.-->
+  Alternatively, if you prefer to see more details and inside information from a players perspective, check out the tropicana page.
+  <br>
+</div>
+
+<!-- It was decided that a "back to top" button was a good idea as it allows for users browsing the page
+ to efficiently get back to the top of the page to access either the nav bar (if on desktop)
+ and the nav links for both mobile and desktop.-->
+<div class="backtotop">
+  <a href="#">Back To Top</a>
+</div>
+
+<!-- The footer was created not only as a design choice but also as a way to make the website as user-friendly as possible.
+  Within the footer, the websites terms and conditions as well as the privacy policy can be directly accessed through two anchored text links.
+  The footer also contains basic information such as copyright info. This is of course not actual copyright info but as a design choice it creates the
+  realistic approach which was being aimed for.-->
+</body>
+<!-- WEBSITE FOOTER -->
+<footer>
+  <div class="footerText">
+    <p>SHMEDIA - Powered By SHMEDIA
+    <br>© Samuel Hemmings</p>
+  </div>
+    <nav class="footerLinks">
+    <a href="terms.html">Terms and Conditions</a>
+    <a href="privacy.html">Privacy Policy</a>
+    </nav>
+</footer>
+</html>
