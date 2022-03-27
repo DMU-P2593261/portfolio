@@ -1,0 +1,725 @@
+/*///////////*//*///////////*//*///////////*/
+/*///////////*//*GLOBAL CSS*//*///////////*/
+/*//////////*//*///////////*//*///////////*/
+
+/*
+
+
+
+*/
+
+* {
+  margin: 0px; /*removes all default margin rules*/
+  padding: 0px; /*removes all default padding rules*/
+  box-sizing: border-box; /*causes less issues with other code*/
+}
+
+
+a:link, a:visited { /*colour of nav links before being highlighted by a cursor*/
+  list-style: none;
+  color: white;
+}
+
+a:hover { /*colour of nav links after being highlighted by a cursor*/
+  color: black;
+}
+
+/*IMAGE CSS*/
+img {
+  max-width: 100%;
+}
+
+
+/*VIDEO CSS*/
+video {
+  width: 100%;
+  z-index: 0;
+  padding: 10px;
+}
+
+/*FOOTER CSS*/
+footer {
+  z-index: 1;
+}
+
+html {
+  scroll-behavior: smooth; /*allows all automatic scrolling to be smooth instead of instant therefore creating a less flat feel to the page and making the site feel more natural and smooth*/
+}
+
+
+
+/*////////////*//*///////////*//*///////////*/
+/*///////////*//*MENU BAR CSS*//*///////////*/
+/*///////////*//*///////////*//*///////////*/
+nav {
+  display: flex; /*allows menu items to display next to eachother*/
+  justify-content: space-around; /*provide more spacing between menu items*/
+  align-items: center; /*centers all menu items vertically */
+  min-height: 8vh; /*minimum height from the top of the page measured in viewport height */
+  background-color: #5E9FF2; /*changes the background colour of the navigation bar*/
+  font-family: 'Poppins', sans-serif; /*calls an external font from fonts.google.com*/
+  max-width: 100%;
+  top: 0;
+  position: sticky; /*sticks the menu to the top of the page and follows the user as they scroll*/
+  z-index: 1; /*changes the layer that the menu is on allowing video controls and other elements to slide underneath without showing through*/
+}
+
+
+.logo {
+  color: white; /*changes the logo text colour*/
+  text-transform: uppercase; /*changes logo text to all uppercase*/
+  letter-spacing: 5px; /*provides a 5px space in between each character*/
+  font-size: 20px; /*changes the font-size to 20px*/
+}
+
+
+.nav-links {
+  display: flex; /*allows menu links to display next to eachother*/
+  justify-content: space-around; /*provides more spacing around each menu link*/
+  width: 45%; /*changes the width in-between each menu link*/
+}
+
+
+.nav-links li {
+  list-style: none; /*removes the bullet points from the list items*/
+}
+
+
+.nav-links a {
+  text-decoration: none; /*removes effects from menu links such as underlining*/
+  letter-spacing: 3px; /*provides a 3px letter spacing to the menu link text*/
+  font-weight: bold; /**/
+  font-size: 14px; /*changes the menu link text font size to 14px*/
+}
+
+
+.burgerMenu {
+  display: none; /*removes the burgermenu from desktop view or large viewport sizes*/
+  cursor: pointer; /*changes the cursor type when the mouse hovers over the burgerMenu*/
+}
+
+
+.burgerMenu div { /*selects all divs within the burgerMenu div and changes their properties*/
+  width: 25px; /*changes the width of all three shapes to 25px*/
+  height: 3px; /*changes the height of all three shapes to 3px*/
+  background-color: white; /*changes the colour of all three shapes to white*/
+  margin: 5px; /*sets the margin of all three shapes to 5px*/
+  transition: all 0.3s ease; /*adds a 0.3 second transition to all three elements of the burger menu*/
+}
+
+@media screen and (max-width:1024px){ /*sets all style rules below to only activate when the viewport is 1024px or below*/
+  .nav-links {
+    width: 60%; /*changes the width in-between each menu link*/
+  }
+}
+
+
+@media screen and (max-width:760px){ /*sets all style rules below to only activate when the viewport is 760px or below (responsive mobile view)*/
+  body {
+    overflow-x: hidden; /*removes scroll bars and excess overflowed content on the x axis*/
+    }
+  .nav-links {
+    position: absolute; /*changes all nav links to an absolute position*/
+    right: 0px; /*moves all nav links to the right-hand side of the screen*/
+    height: 92vh; /*changes the height in relation to the viewport*/
+    top: 8vh; /*positions the nav links down from the top in relation to the viewport*/
+    background-color: #63B0F2; /*sets the background colour to the same as the nav bar*/
+    display: flex; /*allows menu links to display next to eachother*/
+    flex-direction: column; /*changes the flex direction to a column to enable the links to stack on top of eachother*/
+    align-items: center; /*positions the nav links within the center of the background box*/
+    width: 50%; /*sets the width of the background box to 50% of the viewport*/
+    transform: translateX(100%); /**/
+    transition: transform 0.5s ease-in; /**/
+  }
+  .nav-links li {
+  opacity: 0; /*sets the opacity of the list items to 0 which will allow a transition to be applied*/
+  }
+  .burgerMenu {
+    display: block; /*displays the burgerMenu in line and centered with the logo*/
+  }
+
+}
+
+
+.burgerOpen {
+  transform: translateX(0%); /*resets the offset of the burger menu and brings it back onto the page*/
+  opacity: 1;
+}
+
+
+@keyframes navLinkAnimation { /*keyframe rule specifies the animation code for the nav links*/
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,6px); /**/
+}
+.toggle .line2{
+  opacity: 0; /**/
+}
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-6px); /**/
+}
+
+
+
+/*////////////*//*///////////*//*///////////*/
+/*///////////*//*HOMEPAGE CSS*//*///////////*/
+/*///////////*//*///////////*//*///////////*/
+
+/*HOME TITLE*/
+.homeTitle {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/*HOME PARAGRAPH 1*/
+.homeParagraph1 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+
+/*HOME PARAGRAPH 2*/
+.homeParagraph2 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+/*////////////*//*///////////*//*///////////*/
+/*//////////////*//*CV CSS*//*///#######////*/
+/*///////////*//*///////////*//*///////////*/
+
+.cvimage1 {
+}
+
+.cvimage2 {
+}
+
+
+#acnh-anchors {
+  list-style: none;
+  text-align: left;
+  background-color: CornflowerBlue;
+  font-family: 'Poppins', sans-serif;
+  padding: 15px;
+  font-size: 15px;
+}
+
+/*ACNH TITLE*/
+#acnhtitle {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+/*ACNH SUBTITLE*/
+#acnhsubtitle1 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+
+/*ACNH PARAGRAPH*/
+.acnhparagraph1 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+/*ACNH SUBTITLE*/
+#acnhsubtitle2 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+/*ACNH SUBTITLE*/
+#acnhsubtitle2 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+
+/*ACNH PARAGRAPH*/
+.acnhparagraph2 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+/*ACNH SUBTITLE*/
+#acnhsubtitle3 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+
+/*ACNH PARAGRAPH*/
+.acnhparagraph3 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.newhorizonsimage {
+  max-width: 100%;
+  padding: 10px;
+}
+
+/*ACNH SUBTITLE*/
+#acnhsubtitle4 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+
+/*ACNH PARAGRAPH*/
+.acnhparagraph4 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+/*ACNH SUBTITLE*/
+#acnhsubtitle5 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+
+/*ACNH PARAGRAPH*/
+.acnhparagraph5 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.animalcrossingtitles {
+  color: Magenta;
+}
+/*////////////*//*///////////*//*///////////*/
+/*///////////*//*TROPICANA CSS*//*///////////*/
+/*///////////*//*///////////*//*///////////*/
+
+#tropicanatitle {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+.tropicanaparagraph1 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+#tropicana-anchors {
+  list-style: none;
+  text-align: left;
+  background-color: CornflowerBlue;
+  font-family: 'Poppins', sans-serif;
+  padding: 15px;
+  font-size: 15px;
+}
+
+#islandentrance{
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+  scroll-behavior: smooth;
+}
+
+.tropicanaparagraph2 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.tropicanaimage1 {
+  max-width: 100%;
+  padding: 10px;
+}
+
+#buildings {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+  scroll-behavior: smooth;
+}
+
+.tropicanaparagraph3 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.residentservices {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+  scroll-behavior: smooth;
+}
+
+.tropicanaparagraph4 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.tropicanaimage2 {
+  max-width: 100%;
+  padding: 10px;
+}
+
+.airport {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+  scroll-behavior: smooth;
+}
+
+.tropicanaparagraph5 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.tropicanaimage3 {
+  max-width: 100%;
+  padding: 10px;
+}
+
+.museum {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+  scroll-behavior: smooth;
+}
+
+.tropicanaparagraph6 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.tropicanaimage3 {
+  max-width: 100%;
+  padding: 10px;
+}
+
+.shop {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+  scroll-behavior: smooth;
+}
+
+.tropicanaparagraph7 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.tropicanaimage4 {
+  max-width: 100%;
+  padding: 10px;
+}
+
+.tailors {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+  scroll-behavior: smooth;
+}
+
+.tropicanaparagraph8 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.tropicanaimage5 {
+  max-width: 100%;
+  padding: 10px;
+}
+
+.campsite {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+  scroll-behavior: smooth;
+}
+
+.tropicanaparagraph9 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.tropicanaimage6 {
+  max-width: 100%;
+  padding: 10px;
+}
+
+.tropicanaimage7 {
+  max-width: 100%;
+  padding: 10px;
+}
+
+.tropicanaimage8 {
+  max-width: 100%;
+  padding: 10px;
+}
+
+#dailyroutine {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+  scroll-behavior: smooth;
+}
+
+.tropicanaparagraph10 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+#islandresidents {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+  scroll-behavior: smooth;
+}
+
+.tropicanaparagraph11 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.residenttitle {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+.residentimage {
+  padding: 10px;
+  max-width: 50%;
+  display: flex;
+}
+
+.residentdetails {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.residentparagraph {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+#nativefruit {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.nativefruitimage {
+  padding: 10px;
+}
+
+#islandmusic {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.musictitle {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+.islandmusicparagraph {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.islandmusicaudio {
+  width: 100%;
+  padding: 10px;
+}
+
+.musiclink {
+  background-color: #5E9FF2;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+}
+
+.backtotop {
+  font-family: 'Poppins', sans-serif;
+  background-color: #5E9FF2;
+  text-align: center;
+  padding: 10px;
+}
+
+/*////////////*//*///////////*//*///////////*/
+/*///////////*//*CONTACT CSS*//*///////////*/
+/*///////////*//*///////////*//*///////////*/
+
+#contacttitle {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+.contactsubtitle {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+.contactparagraphs {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+/*CONTACT PARAGRAPH 1*/
+.contactParagraph1 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.socialbuttons {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+  padding: 10px;
+  display: flex;
+}
+
+.socialdescriptions {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-instagram {
+  background-image: linear-gradient(#4139e0,#d82452,#f06c2f,#f8cb60); /*colours extracted directly from the original instagram logo using photoshop and applied into a linear gradient*/
+  color: white;
+  width: 55px;
+  border-radius: 50%;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+  width: 55px;
+  border-radius: 50%;
+}
+
+.fa-facebook {
+  background: #1778F2;
+  color: white;
+  width: 55px;
+  border-radius: 50%;
+}
+
+/*////////////*//*///////////*//*///////////*/
+/*///////////*//*ABOUT CSS*//*///////////*/
+/*///////////*//*///////////*//*///////////*/
+
+.abouttitle {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: left;
+}
+
+.aboutparagraph1 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.aboutparagraph2 {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.aboutimage1 {
+  padding: 10px;
+}
+
+.aboutimage2 {
+  padding: 10px;
+}
+
+/*////////////*//*///////////*//*///////////*/
+/*///////////*//*TERMS OF SERVICE CSS*//*///////////*/
+/*///////////*//*///////////*//*///////////*/
+
+.terms {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+/*////////////*//*///////////*//*///////////*/
+/*///////////*//*FOOTER CSS*//*///////////*/
+/*///////////*//*///////////*//*///////////*/
+.footerText {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  text-align: center;
+  background-color: DodgerBlue;
+  min-height: 8vh; /*minimum height from the top of the page measured in viewport height */
+  z-index: 0;
+  background-color: #5E9FF2;
+}
+
+
+/*FOOTER LINKS*/
+.footerLinks {
+  text-decoration: none;
+  font-size: 12px;
+  z-index: 0;
+}
